@@ -7,7 +7,7 @@
     <img :src="imageUrl" alt="Profile Picture" /> <br>
     <button @click="calculateAge">Calculate Age</button>
     <p>Your age is : {{age}}</p>
-    <button v-on:click="validateAge">Validate Age</button>
+    <button @click="validateAge">Validate Age</button>
     <div v-if="showResults">
         <p v-if="age !== null">
           <span class="error" v-if= "age < 18">You are underage.</span>
