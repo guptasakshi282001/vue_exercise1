@@ -5,13 +5,13 @@
     <h1>DOB : {{dob}}</h1>
 
     <img :src="imageUrl" alt="Profile Picture" /> <br>
-    <button v-on:click="calculateAge">Calculate Age</button>
+    <button @click="calculateAge">Calculate Age</button>
     <p>Your age is : {{age}}</p>
     <button v-on:click="validateAge">Validate Age</button>
     <div v-if="showResults">
         <p v-if="age !== null">
           <span class="error" v-if= "age < 18">You are underage.</span>
-          <span v-else>You are ok to use this website.</span>
+          <span class="right" v-else>You are ok to use this website.</span>
         </p>
     </div>
 
@@ -69,5 +69,8 @@ export default {
 <style scoped>
 .error{
     color: red;
+}
+.right{
+    color: green;
 }
 </style>
