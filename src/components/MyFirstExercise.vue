@@ -4,7 +4,6 @@
     <h1>Email : {{email}}</h1>
     <h1>DOB : {{dob}}</h1>
 
-    <img :src="imageUrl" alt="Profile Picture" /> <br>
     <button @click="calculateAge">Calculate Age</button>
     <p>Your age is : {{age}}</p>
     <button @click="validateAge">Validate Age</button>
@@ -17,7 +16,10 @@
 
     <ul>
         <li v-for="item in users" :key="item.name">
-           {UserName is {{item.name}} and Age : {{item.age}} } 
+            <img :src="item.imageUrl" :alt="item.name">
+            <div class="images">
+           {UserName : {{item.name}} and Age : {{item.age}} } 
+           </div>
         </li>
     </ul>
 
@@ -33,14 +35,16 @@ export default {
             dob : "02/08/2001",
             age : null,
             showResults : false,
-            imageUrl : "https://tse2.mm.bing.net/th?id=OIP.oqmBe8wpnsCUUuxUwyv5TAHaE8&pid=Api&P=0",
             users : [{
                 name : "rahul",
-                age : "20"
+                age : "20",
+                imageUrl : "https://tse2.mm.bing.net/th?id=OIP.C69s0yEXXyH5JrVvd_zQqwHaF7&pid=Api&P=0"
             },
             {
                 name : "anil",
-                age  : "21"
+                age  : "21",
+                imageUrl : "https://tse2.mm.bing.net/th?id=OIP.ZrQRjvTlkehO-SmOZGAiqAHaLG&pid=Api&P=0"
+
             }],
         }
     },
@@ -72,5 +76,19 @@ export default {
 }
 .right{
     color: green;
+}
+
+img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+li{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.images{
+    margin-top: 3%;
 }
 </style>
